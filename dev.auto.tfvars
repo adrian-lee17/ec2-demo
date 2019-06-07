@@ -1,0 +1,21 @@
+ec2_count_fe     = "2"
+ami_id_fe        = "ami-0fb7513bcdc525c3b"
+instance_type_fe = "t2.small"
+subnet_id_fe     = "subnet-275cf940"
+public_ip_fe     = "true"
+az_fe            = "ap-southeast-2a"
+disksize_fe      = [128, 512, 1024]
+disktype_fe      = "Standard"
+encryption_fe    = "false"
+ec2name_fe       = "application"
+
+ec2_count_be     = "2"
+ami_id_be        = "ami-0fb7513bcdc525c3b"
+instance_type_be = "t2.small"
+subnet_id_be     = "subnet-275cf940"
+public_ip_be     = "false"
+az_be            = "ap-southeast-2a"
+disksize_be      = [1024]
+disktype_be      = "Standard"
+encryption_be    = "false"
+ec2name_be       = "database"
