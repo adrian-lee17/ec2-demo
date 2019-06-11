@@ -30,9 +30,18 @@ module "backendVM" {
   ec2name       = var.ec2name_be
 }
 
-output "frontend" {
+output "frontendVMID" {
     value       = module.backendVM.*.id
 }
-output "backend" {
+output "backendVMID" {
     value       = module.frontendVM.*.id
+}
+output "frontendVMpublicIP" {
+    value       = module.backendVM.*.public_ip
+}
+output "frontendVMprivateIP" {
+    value       = module.backendVM.*.private_ip
+}
+output "backendVMprivateIP" {
+    value       = module.frontendVM.*.private_ip
 }
