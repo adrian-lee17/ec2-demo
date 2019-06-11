@@ -37,13 +37,13 @@ output "backendVMID" {
     value       = module.frontendVM.*.id
 }
 output "frontendVMpublicIP" {
-    value       = module.backendVM.vm.*.public_ip
+    value       = module.backendVM.public_ip
 }
 
 output "frontendVMprivateIP" {
-    value       = module.backendVM.vm.*.private_ip
+    value       = module.backendVM.private_ip
 }
 
 output "backendVMprivateIP" {
-    value       = module.frontendVM.vm.*.private_ip
+    value       = module.frontendVM.private_ip
 }
