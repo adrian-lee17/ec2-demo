@@ -29,3 +29,10 @@ module "backendVM" {
   encryption    = var.encryption_be
   ec2name       = var.ec2name_be
 }
+
+output {
+    value       = module.backendVM.*.id
+}
+output {
+    value       = module.frontendVM.*.id
+}
