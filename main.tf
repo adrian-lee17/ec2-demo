@@ -47,3 +47,13 @@ output "frontendVMprivateIP" {
 output "backendVMprivateIP" {
     value       = module.frontendVM.private_ip
 }
+
+terraform {
+  backend "remote" {
+    organization = "WiProLtd"
+
+    workspaces {
+      name = "rms-ec2-demo-singlesite"
+    }
+  }
+}
