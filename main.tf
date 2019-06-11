@@ -30,9 +30,9 @@ module "backendVM" {
   ec2name       = var.ec2name_be
 }
 
-output {
+output "frontend" {
     value       = module.backendVM.*.id
 }
-output {
+output "backend" {
     value       = module.frontendVM.*.id
 }
