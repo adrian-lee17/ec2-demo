@@ -3,8 +3,8 @@ provider "aws" {
 }
 
 module "frontendVM" {
-  source        = "app.terraform.io/WiproLtd/demo/ec2"
- 
+  source        = "app.terraform.io/WiproLtd/demo/ec2modules"
+  version       = "2.0.0"
   ec2_count     = var.ec2_count_fe
   ami_id        = var.ami_id_fe
   instance_type = var.instance_type_fe
@@ -18,8 +18,8 @@ module "frontendVM" {
 }
 
 module "backendVM" {
-  source        = "app.terraform.io/WiproLtd/demo/ec2"
-  
+  source        = "app.terraform.io/WiproLtd/demo/ec2modules"
+  version = "2.0.0"
   ec2_count     = var.ec2_count_be
   ami_id        = var.ami_id_be
   instance_type = var.instance_type_be
@@ -51,6 +51,7 @@ output "backendVMprivateIP" {
 }
 
 terraform {
+  required_version = ">= 0.12"
   backend "remote" {
     organization = "WiProLtd"
 
