@@ -3,7 +3,8 @@ provider "aws" {
 }
 
 module "frontendVM" {
-  source        = "./EC2/"
+  source        = "app.terraform.io/WiproLtd/demo/ec2"
+ 
   ec2_count     = var.ec2_count_fe
   ami_id        = var.ami_id_fe
   instance_type = var.instance_type_fe
@@ -17,7 +18,8 @@ module "frontendVM" {
 }
 
 module "backendVM" {
-  source        = "./EC2/"
+  source        = "app.terraform.io/WiproLtd/demo/ec2"
+  
   ec2_count     = var.ec2_count_be
   ami_id        = var.ami_id_be
   instance_type = var.instance_type_be
